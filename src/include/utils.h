@@ -5,6 +5,8 @@
 #include <stdlib.h>
 #include <string.h>
 
+#define YATP_CAPACITY(n, t) (n * sizeof(t))
+
 char* load_file(const char* filepath);
 
 #ifdef _WIN32
