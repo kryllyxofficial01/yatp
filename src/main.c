@@ -15,9 +15,13 @@ int main(int argc, const char* argv[]) {
         return EXIT_FAILURE;
     }
 
-    token_t* tokens = lex(contents);
+    token_list_t tokens_list = lex(contents);
 
-    free(tokens);
+    for (size_t i = 0; i < tokens_list.tokens_length; i++) {
+        printf(token_to_string(tokens_list.tokens[i]));
+    }
+
+    free(tokens_list.tokens);
 
     return EXIT_SUCCESS;
 }
